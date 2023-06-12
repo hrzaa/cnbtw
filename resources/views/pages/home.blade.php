@@ -145,8 +145,8 @@
     <div class="container-fluid py-5 bg-white">
         <div class="container">
             <div class="text-center" data-aos="fade-up" data-aos-delay="200">
-                <h5 class="section-title ff-secondary text-center text-primary fw-normal">@lang('lang.food menu')</h5>
-                <h1 class="mb-5">@lang('lang.all foods available')</h1>
+                <h5 class="section-title ff-secondary text-center text-primary fw-normal">@lang('lang.culiner menu')</h5>
+                <h1 class="mb-5">@lang('lang.all culiners available')</h1>
             </div>
              <div class="row g-4 justify-content-center">
                 @php
@@ -169,7 +169,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">{{ $culiner->culiner_name }}</h5>
                                     <p class="card-text">{!! Str::words($culiner->{'culiner_desc_'.app()->getLocale()}, 20) !!} <span><a href="{{ route('culinary-detail', $culiner->slug) }}" class="text-primary">Think to Try</a></span></p>
-                                    <p class="card-text"><small class="text-muted">Last update{{ $culiner->updated_at->diffForHumans() }}</small></p>
+                                    <p class="card-text"><small class="text-muted">Last update {{ $culiner->updated_at->diffForHumans() }}</small></p>
                                 </div>
                             </div>
                         </div>

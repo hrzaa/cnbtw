@@ -26,11 +26,11 @@
                   <div class="form-group">
                     <label>Category</label>
                     <select name="categories_id" class="form-control">
-                      <option value="{{ $item->categories_id }}" selected>{{ $item->category->name_id }}</option>
+                      <option value="{{ $item->categories_id }}" selected>{{ $item->category->name_en }}</option>
                        @foreach ($categories as $category)
                           <option value="{{ $category->id }}">{{ $category->name_id }}</option>
                       @endforeach
-                    </select>
+                    </select> 
                   </div>
                   <div class="form-group">
                     <label>Uploader</label>

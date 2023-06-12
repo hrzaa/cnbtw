@@ -22,7 +22,7 @@ class CreateCategoriesTable extends Migration
             // table eng
             $table->string('name_en');
 
-            $table->string('photo');
+            $table->string('photo')->nullable();
             $table->string('slug');
 
             $table->softDeletes();

@@ -2,20 +2,22 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\User;
+use App\Models\Culiner;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Review extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'users_id', 'food_id','comment', 'photo', 'rating', 'is_aktif'
+        'users_id', 'culiner_id','comment', 'photo', 'rating', 'is_aktif'
     ];
 
-    public function food()
+    public function culiner()
     {
-        return $this->belongsTo(Food::class);
+        return $this->belongsTo(Culiner::class);
     }
 
     public function user()

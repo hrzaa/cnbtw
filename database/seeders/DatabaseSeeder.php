@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\culiner;
+use App\Models\Culiner;
 use App\Models\User;
 use App\Models\Event;
 use App\Models\Resto;
@@ -33,10 +33,9 @@ class DatabaseSeeder extends Seeder
             'name_id' => 'Minuman',
             'name_en' => 'Drink',
             'slug' => Str::slug('Minuman'),
-            'photo' => Storage::disk('public')->put('assets/category', public_path('vendor/img/default.png'))
         ]);
 
-        culiner::create([
+        Culiner::create([
             'users_id' => '1', 
             'categories_id'=> '1',
             'culiner_name' => 'Es Dawet',
