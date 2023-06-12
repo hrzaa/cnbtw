@@ -5,16 +5,17 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\DetailController;
 use App\Http\Controllers\CulinerController;
-use App\Http\Controllers\Admin\CulinerController as CulinerAdminController;
+use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\Admin\UserController as UserAdminController;
 use App\Http\Controllers\Admin\EventController as EventAdminController;
 use App\Http\Controllers\Admin\RestoController as RestoAdminController;
 use App\Http\Controllers\Admin\ReviewController as ReviewAdminController;
+use App\Http\Controllers\Admin\CulinerController as CulinerAdminController;
 use App\Http\Controllers\Admin\CategoryController as CategoryAdminController;
 use App\Http\Controllers\Admin\DashboardController as DashboardAdminController;
-use App\Http\Controllers\Admin\CulinerGalleryController as CulinerGalleryAdminController;
 use App\Http\Controllers\Admin\EventGalleryController as EventGalleryAdminController;
 use App\Http\Controllers\Admin\RestoGalleryController as RestoGalleryAdminController;
+use App\Http\Controllers\Admin\CulinerGalleryController as CulinerGalleryAdminController;
 
 /*
 |--------------------------------------------------------------------------

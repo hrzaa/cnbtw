@@ -18,39 +18,37 @@
         </div>
     </div>
 
-      <!-- Category Start -->
-        <div class="container-fluid py-5 bg-white">
-            <div class="container">
-                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
-                   <h5 class="section-title ff-secondary text-center text-primary fw-normal">@lang('lang.header solo culiners')</h5>
-                   <h1 class="mb-5">@lang('lang.header category2')</h1>
+    <div class="container-fluid py-5 bg-white">
+        {{-- Category start --}}
+        <div class="container py-5">
+            <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                <h5 class="section-title ff-secondary text-center text-primary fw-normal">@lang('lang.header solo culiners')</h5>
+                <h1 class="mb-5">@lang('lang.header category2')</h1>
+            </div>
+            <div class="row">
+            @php
+                $incrementCategory = 0
+            @endphp
+            @forelse ($categories as $category)
+                <div class="col-6 col-md-3 col-lg-2" data-aos="fade-up" data-aos-delay="{{ $incrementCategory+=200 }}">
+                    <a href="{{ route('culinary-categories-detail', $category->slug) }}" class="component-categories d-block">
+                        <div class="categories-images">
+                            <img src="{{ Storage::url($category->photo) }}" alt="" class="w-100"/>
+                        </div>
+                        <p class="categories-text">{{ $category->{'name_'.app()->getLocale()} }}</p>
+                    </a>
                 </div>
-                <div class="row">
-                @php
-                    $incrementCategory = 0
-                @endphp
-                @forelse ($categories as $category)
-                    <div class="col-6 col-md-3 col-lg-2" data-aos="fade-up" data-aos-delay="{{ $incrementCategory+=200 }}">
-                        <a href="{{ route('culinary-categories-detail', $category->slug) }}" class="component-categories d-block">
-                            <div class="categories-images">
-                                <img src="{{ Storage::url($category->photo) }}" alt="" class="w-100"/>
-                            </div>
-                            <p class="categories-text">{{ $category->{'name_'.app()->getLocale()} }}</p>
-                        </a>
-                    </div>
-                @empty
-                     <div class="col-12 text-center py-5 wow fadeInUp" data-wow-delay="0.1s">
-                    No Categories Found!
-                    </div>
-                @endforelse
+            @empty
+                    <div class="col-12 text-center py-5 wow fadeInUp" data-wow-delay="0.1s">
+                No Categories Found!
+                </div>
+            @endforelse
             </div>
         </div>
-        <!-- Category End -->
+        {{-- Category END --}}
 
-
-    <!-- Menu Start -->
-    <div class="container-fluid py-5 bg-white">
-        <div class="container">
+        {{-- Culinary start --}}
+        <div class="container py-5">
             <div class="text-center" data-aos="fade-up" data-aos-delay="200">
                 <h5 class="section-title ff-secondary text-center text-primary fw-normal">@lang('lang.header solo culiners')</h5>
                 <h1 class="mb-5">@lang('lang.all culiners available')</h1>  
@@ -91,12 +89,15 @@
                         {{ $culiners->links() }}
                     </div>
                 </div>
-                </div>
             </div>
-    </div>
-    <!-- Menu End -->
+        </div>
+        {{-- culinary end --}}
 
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+
+    
 
 @endsection
