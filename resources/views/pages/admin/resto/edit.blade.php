@@ -53,7 +53,7 @@
                     </div>
                     <div class="form-group col-md-6">
                       <label>Alamat(Link Maps)</label>
-                      <input type="text" name="address-link" class="form-control" value="{{ $item->address }}">
+                      <input type="text" name="address_link" class="form-control" value="{{ $item->address_link }}">
                     </div>
                   </div>
                 <div class="card-footer text-right">
