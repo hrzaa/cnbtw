@@ -34,18 +34,12 @@
                     $incrementCategory = 0
                 @endphp
                 @forelse ($events as $event)
-                <div class="col-lg-3 col-md-6"  data-aos="fade-up" data-aos-delay="{{ $incrementCategory+=100 }}" style="color: #0c0d36;">
-                    <div class="team-item rounded overflow-hidden">
-                        <div class="rounded overflow-hidden m-4">
-                            <a href="{{ route('event-detail', $event->slug) }}"><img class="img-event" src="{{ Storage::url($event->event_galleries->first()->photos ?? '') }}" alt=""></a>
-                        </div>
-                        <h4 class="mt-4 text-center">{{ $event->event_name }}</h4>
-                        <div class="maps">
-                                <i class="fas fa-map-marked-alt p-3"></i><a href="">Kota Surakarta, Jawa Tengah</a>
-                        </div>
-                        <div class="date mb-2">
-                            <i class="fas fa-calendar-alt p-3"></i>{{ date('d F Y', strtotime($event->date_start)) }} - {{ date('d F Y', strtotime($event->date_end)) }}
-                        </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="{{ $incrementCategory+=100 }}">
+                    <div class="team-item bg-white h-100 d-flex p-4 flex-column">`
+                        <img src="{{ Storage::url($event->event_galleries->first()->photos ?? '') }}" alt="">
+                        <h3 class="mt-2 text-center">{{ $event->event_name }}</h3>
+                        <p>{!! Str::words($event->{'event_desc_'.app()->getLocale()}, 20) !!} <span></span></p>
+                        <a href="{{ route('event-detail', $event->slug) }}" class="btn btn-primary mt-auto">Detail</a>
                     </div>
                 </div>
                 @empty
@@ -53,7 +47,11 @@
                         No Event Found!
                     </div>
                 @endforelse
-                    {{ $events->links() }}
+                <div class="col-12 text-center py-5">
+                   <div class="d-flex justify-content-center">
+                        {{ $events->links() }}
+                    </div>
+                </div>
             </div>
         </div>
         {{-- event end --}}

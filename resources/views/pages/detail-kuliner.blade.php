@@ -7,7 +7,7 @@
      <div class="container-fluid py-5 bg-dark hero-event" style="background: linear-gradient(0deg,
             rgba(15, 23, 43, 0.75),
             rgba(15, 23, 43, 0.75)),
-        url(/vendor/img/satekere3.jpg), #0f172b;
+        url(/vendor/img/satekere3.JPG), #0f172b;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;">
