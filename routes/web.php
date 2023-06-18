@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\DetailController;
+use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\CulinerController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\Admin\UserController as UserAdminController;

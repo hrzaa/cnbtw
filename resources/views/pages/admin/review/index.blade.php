@@ -14,7 +14,7 @@
                   <tr>
                     <th>ID</th>
                     <th>User Name</th>
-                    <th>Food</th>
+                    <th>Culiner</th>
                     <th>Comment</th>
                     <th>Rating</th>
                     <th>Status</th>
@@ -42,7 +42,7 @@
         columns:[
             {data:'id', name:'id'},
             {data:'user.name', name:'user.name'},
-            {data:'food.food_name', name:'food.food_name'},
+            {data:'culiner.culiner_name', name:'culiner.culiner_name'},
             // {data:'photo', name:'photo'},
             {data:'comment', name:'comment'},
             {data:'rating', name:'rating'},
@@ -54,7 +54,7 @@
                     if (data) {
                         return '<span style="color: green; font-weight:bold">Approve</span>';
                     } else {
-                        return 'Waiting';
+                        return '<span style="font-weight:bold">Approve</span>';
                     }
                 }
             },

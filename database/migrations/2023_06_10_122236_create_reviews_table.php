@@ -17,7 +17,7 @@ class CreateReviewsTable extends Migration
             $table->id();
             
             $table->foreignId('users_id');
-            $table->foreignId('food_id');
+            $table->foreignId('culiner_id');
             $table->longText('comment');
             $table->string('photo')->nullable();
             $table->integer('rating');
