@@ -22,11 +22,11 @@
                   <div class="form-row">
                     <div class="form-group col-md-6">
                       <label>Categories_id</label>
-                      <input type="text" name="name_id" class="form-control" value="{{ $item->name_id }}" required>
+                      <input type="text" name="name_id" class="form-control" value="{{ $item->name_id }}" maxlength="20" required>
                     </div>
                     <div class="form-group col-md-6">
                       <label>Categories_en</label>
-                      <input type="text" name="name_en" class="form-control" value="{{ $item->name_en }}" required>
+                      <input type="text" name="name_en" class="form-control" value="{{ $item->name_en }}" maxlength="20" required>
                     </div>
                   </div>
                   <div class="form-group">

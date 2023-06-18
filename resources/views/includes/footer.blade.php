@@ -12,9 +12,9 @@
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Contact</h4>
-                    <p class="mb-2"><i class="fas fa-map-marker-alt me-3"></i>Jl. Jend. Urip Sumoharjo No.110, Purwodiningratan, Kec. Jebres, Kota Surakarta, Jawa Tengah 57129</p>
-                    <p class="mb-2"><i class="fas fa-phone-alt me-3"></i>+6285877394517</p>
-                    <p class="mb-2"><i class="fas fa-envelope me-3"></i>disbudpar.info@gmail.com</p>
+                    <p class="mb-2"><i class="fas fa-map-marker-alt me-3"></i>Jl. Slamet Riyadi No.275, Sriwedari, Kec. Laweyan, Kota Surakarta, Jawa Tengah 57141</p>
+                    <p class="mb-2"><i class="fas fa-phone-alt me-3"></i>+62271714942</p>
+                    <p class="mb-2"><i class="fas fa-envelope me-3"></i>disbudpar@surakarta.go.id</p>
                     <div class="d-flex pt-2">
                         <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
                         <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
@@ -24,7 +24,6 @@
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Newsletter</h4>
-                    <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
                     <div class="position-relative mx-auto" style="max-width: 400px;">
                         <input class="form-control border-primary w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
                         <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>

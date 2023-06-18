@@ -43,9 +43,12 @@
                     <h1 class="mb-4">
                         Welcome to {{ $event->event_name }}
                     </h1>
+                    <h6>Date : {{ date('d F Y', strtotime($event->date_start)) }} - {{ date('d F Y', strtotime($event->date_end)) }}</h6>
+                    <h6>Location : <a href="{{ $event->address_link }}" target="_blank"> {{ $event->address }}</a></h6>
                     <p class="mb-4">
                         {!! $event->{'event_desc_'.app()->getLocale()} !!}
                     </p>
+                   
                 </div>
             </div>
         </div>

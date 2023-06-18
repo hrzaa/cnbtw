@@ -26,23 +26,21 @@
                 <h1 class="mb-5">@lang('lang.header category2')</h1>
             </div>
             <div class="row">
-            @php
-                $incrementCategory = 0
-            @endphp
-            @forelse ($categories as $category)
-                <div class="col-6 col-md-3 col-lg-2" data-aos="fade-up" data-aos-delay="{{ $incrementCategory+=200 }}">
-                    <a href="{{ route('culinary-categories-detail', $category->slug) }}" class="component-categories d-block">
-                        <div class="categories-images">
-                            <img src="{{ Storage::url($category->photo) }}" alt="" class="w-100"/>
-                        </div>
-                        <p class="categories-text">{{ $category->{'name_'.app()->getLocale()} }}</p>
-                    </a>
+                @php
+                    $incrementCategory = 0
+                @endphp
+                <div class="owl-carousel owl-theme owl-img-responsive">
+                @foreach ($categories as $category)
+                    <div class="item" data-aos="fade-up" data-aos-delay="{{ $incrementCategory+=200 }}">
+                        <a href="{{ route('culinary-categories-detail', $category->slug) }}" class="component-categories d-block h-100 p-2">
+                            <div class="categories-images p-3">
+                                <img src="{{ Storage::url($category->photo) }}" alt="" class="w-100"/>
+                            </div>
+                            <h5 class="categories-text mt-2">{{ $category->{'name_'.app()->getLocale()} }}</h5>
+                        </a>
+                    </div>
+                @endforeach 
                 </div>
-            @empty
-                    <div class="col-12 text-center py-5 wow fadeInUp" data-wow-delay="0.1s">
-                No Categories Found!
-                </div>
-            @endforelse
             </div>
         </div>
         {{-- Category END --}}

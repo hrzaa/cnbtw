@@ -12,7 +12,7 @@ class GalleryController extends Controller
         $restos = Resto::query()
             ->select('restos.resto_name', 'restos.price', 'resto_galleries.photos')
             ->join('resto_galleries', 'restos.id', '=', 'resto_galleries.resto_id')
-            ->get();
+            ->Paginate(12);
 
         return view('pages.gallery', [
             'restos' => $restos

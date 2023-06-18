@@ -47,6 +47,11 @@
                             No Gallery Found!
                         </div>
                     @endforelse
+                    <div class="col-12 text-center py-5">
+                        <div class="d-flex justify-content-center">
+                            {{ $restos->links() }}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

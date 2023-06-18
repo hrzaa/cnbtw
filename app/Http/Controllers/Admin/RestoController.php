@@ -93,7 +93,7 @@ class RestoController extends Controller
         $culinerId = $request->input('culiner_id', []); // Ambil array id makanan dari form
 
         // $resto->culiners()->attach($culinerId);
-        $resto->culiners()->attach($culinerId);
+        // $resto->culiners()->attach($culinerId);
 
         return redirect()->route('resto.index');
     }

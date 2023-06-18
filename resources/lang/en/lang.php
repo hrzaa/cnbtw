@@ -19,6 +19,7 @@ return [
     'history of solo' => 'History of Solo',
     'paragraf solo' => 'The ancient history of the city of Solo begins with a series of events originating from the first "Javanese Man" found in Sangiran, Sragen Regency. Later, a study stated that Surakarta was founded in a village called Sala Village, on the banks of the Solo River. Until 1744, Solo was just a remote quiet village, 10 km east of Kartasura, the capital of the present Mataram kingdom. But in that year the Susuhunan (king) of Mataram, Pakubuwono II, supported the Chinese against the Dutch, and as a result the court in Kartasura was dissolved. Pakubuwono II sought a more advantageous place to rebuild his capital, and in 1745 the entire palace was dismantled and transported in great procession to Surakarta, on the banks of the Kali Solo. However, decline continued, and in 1757 a rival royal house to the Mangkunegoro was erected right in the center of Solo. Thereafter, the Solo royal family wisely avoided fighting and instead poured their energies into the arts, developing a highly sophisticated and graceful court culture. The gamelan pavilions became the new theater of war, with individual cities competing to produce a more refined court culture – a situation that continues to this day.',
     'culiner menu' => 'Culiner Menu',
+    'lates culiners' => 'Latest Culinary',
     'all culiners available' => 'All Culiners Available',
     'solo events' => 'Solo Events',
     'our event' => 'Our Event',

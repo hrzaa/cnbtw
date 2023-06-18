@@ -76,15 +76,15 @@
           </div>
           <ul class="sidebar-menu">
               <li class="menu-header">Dashboard</li>
-              <li><a class="nav-link" href="{{ route('admin-dashboard') }}"><i class="fas fa-fire"></i> <span>Dashboard</span></a></li>
+              <li class="{{ (request()->is('admin')) ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin-dashboard') }}"><i class="fas fa-fire"></i> <span>Dashboard</span></a></li>
               <li class="{{ (request()->is('admin/category*')) ? 'active' : '' }}"><a class="nav-link" href="{{ route('category.index') }}"><i class="fas fa-clipboard-list"></i> <span>Categories</span></a></li>
-              <li><a class="nav-link" href="{{ route('culiner.index') }}"><i class="fas fa-utensils"></i> <span>Culinary</span></a></li>
-              <li><a class="nav-link" href="{{ route('culiner-gallery.index') }}"><i class="fas fa-utensils"></i> <span>Culinary Gallery</span></a></li>
-              <li><a class="nav-link" href="{{ route('resto.index') }}"><i class="fas fa-store"></i> <span>Resto</span></a></li>
-              <li><a class="nav-link" href="{{ route('resto-gallery.index') }}"><i class="fas fa-store"></i> <span>Resto Gallery</span></a></li>
-              <li><a class="nav-link" href="{{ route('event.index') }}"><i class="fas fa-calendar-alt"></i><span>Event</span></a></li>
-              <li><a class="nav-link" href="{{ route('event-gallery.index') }}"><i class="fas fa-calendar-alt"></i><span>Event Gallery</span></a></li>
-              <li><a class="nav-link" href="{{ route('review.index') }}"><i class="fas fa-comments"></i> <span>Review</span></a></li>
+              <li class="{{ (request()->is('admin/culiner')) ? 'active' : '' }}"><a class="nav-link" href="{{ route('culiner.index') }}"><i class="fas fa-utensils"></i> <span>Culinary</span></a></li>
+              <li class="{{ (request()->is('admin/culiner-gallery*')) ? 'active' : '' }}"><a class="nav-link" href="{{ route('culiner-gallery.index') }}"><i class="fas fa-utensils"></i> <span>Culinary Gallery</span></a></li>
+              <li class="{{ (request()->is('admin/resto')) ? 'active' : '' }}"><a class="nav-link" href="{{ route('resto.index') }}"><i class="fas fa-store"></i> <span>Resto</span></a></li>
+              <li class="{{ (request()->is('admin/resto-gallery*')) ? 'active' : '' }}"><a class="nav-link" href="{{ route('resto-gallery.index') }}"><i class="fas fa-store"></i> <span>Resto Gallery</span></a></li>
+              <li class="{{ (request()->is('admin/event')) ? 'active' : '' }}"><a class="nav-link" href="{{ route('event.index') }}"><i class="fas fa-calendar-alt"></i><span>Event</span></a></li>
+              <li class="{{ (request()->is('admin/event-gallery*')) ? 'active' : '' }}"><a class="nav-link" href="{{ route('event-gallery.index') }}"><i class="fas fa-calendar-alt"></i><span>Event Gallery</span></a></li>
+              <li class="{{ (request()->is('admin/review*')) ? 'active' : '' }}"><a class="nav-link" href="{{ route('review.index') }}"><i class="fas fa-comments"></i> <span>Review</span></a></li>
               <li class="{{ (request()->is('admin/user*')) ? 'active' : '' }}"><a class="nav-link" href="{{ route('user.index') }}"><i class="fas fa-users"></i> <span>Users</span></a></li>
             </ul>
         </aside>
