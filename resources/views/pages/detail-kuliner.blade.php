@@ -195,7 +195,7 @@
                                 <div class="col-12 ">
                                 <div class="form-floating">
                                     <div class="rate">
-                                        <input type="radio" id="star5" name="rating" value="5" />
+                                        <input type="radio" id="star5" name="rating" value="5" checked/>
                                         <label for="star5" title="star5">5 stars</label>
                                         <input type="radio" id="star4" name="rating" value="4" />
                                         <label for="star4" title="star4">4 stars</label>
