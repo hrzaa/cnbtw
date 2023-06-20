@@ -18,13 +18,9 @@ class DetailController extends Controller
             ->where('culiner_id', $culiners->id) // Menambahkan kondisi where untuk memfilter berdasarkan ID makanan
             ->take(4)
             ->get();
-        // $reviews = Review::with(['user', 'culiner'])
-        //     ->where('is_aktif', true)
-        //     ->orderBy('created_at', 'desc') // Sorting by 'created_at' column in descending order
-        //     ->get();
+        
         return view('pages.detail-kuliner', [
             'culiners' => $culiners,
-            // 'reviews' => $reviews,
             'restos' => $restos
         ]);
 

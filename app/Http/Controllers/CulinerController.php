@@ -30,4 +30,14 @@ class CulinerController extends Controller
             'culiners' => $culiners 
         ]);
     }
+
+    public function search(Request $request){
+        $keyword = $request->keyword;
+        $categories = Category::all();
+
+        $culiners = Culiner::where('culiner_name','like',"%".$keyword."%")->paginate(2);
+        
+        return view('pages.culinary',compact('culiners', 'categories'));
+    }
+
 }

@@ -38,6 +38,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/culinary', [CulinerController::class, 'index'])->name('culinary');
 Route::get('/culinary/categories/{id}', [CulinerController::class, 'detail'])->name('culinary-categories-detail');
+Route::get('/culinary/search', [CulinerController::class, 'search'])->name('culinary-search');
 
 Route::get('culinary/detail/{id}', [DetailController::class, 'detail'])->name('culinary-detail');
 

@@ -19,6 +19,7 @@
     </div>
 
     <div class="container-fluid py-5 bg-white">
+       
         {{-- Category start --}}
         <div class="container py-5">
             <div class="text-center" data-aos="fade-up" data-aos-delay="200">
@@ -51,7 +52,16 @@
                 <h5 class="section-title ff-secondary text-center text-primary fw-normal">@lang('lang.header solo culiners')</h5>
                 <h1 class="mb-5">@lang('lang.all culiners available')</h1>  
             </div>
-             <div class="row g-4 justify-content-center">
+             <div class="row g-4 justify-content-center" data-aos="fade-up" data-aos-delay="100">
+                 <div class="col-lg-8 col-md-12 col-sm-12">
+                    <div class="position-relative mx-auto">
+                        <form action="{{ route('culinary-search') }}" method="GET">
+                            @csrf
+                            <input class="form-control border-primary w-100 py-3 ps-4 pe-5" type="text" placeholder="what you want?" name="keyword" autocomplete="off" value="{{ request('keyword') }}">
+                            <button type="submit" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">Search</button>
+                        </form>
+                    </div>
+                </div>
                 @php
                     $incrementCategory = 0
                 @endphp
