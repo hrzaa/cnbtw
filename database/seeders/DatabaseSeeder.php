@@ -63,6 +63,8 @@ class DatabaseSeeder extends Seeder
             'users_id' => '1', 
             'culiner_id' => '1', 
             'price' => '10000',
+            'resto_desc_id' => '',
+            'resto_desc_en' => '',
             'address' => 'Pasar Gede Hardjonagoro, Lapak Galabo (Gladag Langen Bogan), Jl. Jend. Urip Sumoharjo, Kota Surakarta', 
             'address_link' => 'https://goo.gl/maps/LA5AtBcRZg1xNuaV9',
             'slug' => Str::slug('Dawet Telasih Bu Dermi, Pasar Gede'),

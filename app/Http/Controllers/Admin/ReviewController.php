@@ -19,7 +19,7 @@ class ReviewController extends Controller
     {
         if(request()->ajax())
         {
-            $query = Review::with(['culiner', 'user']);
+            $query = Review::with(['resto', 'user']);
             return Datatables::of($query)
                 ->addColumn('action', function ($item) {
                     return '
@@ -33,7 +33,7 @@ class ReviewController extends Controller
                                         Aksi
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="action' .  $item->id . '">
-                                    <a class="dropdown-item" href="' . route('review.approve', $item->id) . '">
+                                    <a class="dropdown-item btn btn-success" href="' . route('review.approve', $item->id) . '">
                                         Approve
                                     </a>
                                     <form action="' . route('review.destroy', $item->id) . '" method="POST">

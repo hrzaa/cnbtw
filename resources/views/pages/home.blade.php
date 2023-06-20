@@ -250,7 +250,7 @@
         {{-- video end --}}
 
         {{-- review start --}}
-        <div class="container py-5">
+        {{-- <div class="container py-5">
             <div class="text-center">
                 <h5 class="section-title ff-secondary text-center text-primary fw-normal">@lang('lang.testimonial')</h5>
                 <h1 class="mb-5">@lang('lang.suggestions and critics')</h1>
@@ -277,7 +277,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         {{-- review end --}}
 
         <!-- Back to Top -->

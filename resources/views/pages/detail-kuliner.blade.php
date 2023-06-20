@@ -12,7 +12,7 @@
     background-repeat: no-repeat;
     background-size: cover;">
         <div class="container text-center my-5 pt-5 pb-4">
-            <h1 class="display-3 text-white mb-3 animated slideInDown">Sate Kere</h1>
+            <h1 class="display-3 text-white mb-3 animated slideInDown">{{ $culiners->culiner_name }}</h1>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb justify-content-center text-uppercase">
                     <li class="breadcrumb-item"><a href="">Home</a></li>
@@ -116,8 +116,7 @@
                         </div>
                         <h5 class="mb-0">{{ $resto->resto_name }}</h5>
                         <a href="{{ $resto->address_link }}" class="mb-1">{{ $resto->address }}</a>
-                        {{-- <a class="mb-1">{{ $resto->address }}</a> --}}
-                        <h6>Rp{{ number_format($resto->price) }}</h6>
+                        <h6>Rp.{{ number_format($resto->price) }}</h6>
                             <!-- Add icon library -->
                             <small>
                                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -127,7 +126,7 @@
                                 <span class="fa fa-star"></span>
                                 <span class="fa fa-star"></span>
                             </small>
-
+                        <a href="{{ route('resto-detail', $resto->slug) }}" class="btn btn-primary">detail resto</a>
                     </div>
                 </div>
                 @empty
@@ -139,38 +138,7 @@
             </div>
         </div>
 
-        <div class="container py-5">
-            <div class="text-center">
-                <h5 class="section-title ff-secondary text-center text-primary fw-normal">Testimonial</h5>
-                <h1 class="mb-5">Suggestions and Critics!!!</h1>
-            </div>
-            <div class="row">
-                <div class="col-12 col-lg-8">
-                    <div class="review">
-                        @forelse ($reviews as $review)
-                            <div class="testimonial-item bg-transparent rounded p-3">
-                                <div class="d-flex align-items-center">
-                                    <img class="img-fluid flex-shrink-0 rounded-circle" src="/vendor/img/testimonial-1.jpg" style="width: 50px; height: 50px;">
-                                    <div class="ps-3">
-                                        <h5 class="mb-1">{{ $review->user->name }}</h5>
-                                        <p>{{ $review->comment }}</p>
-                                            <small>{{ $review->updated_at->diffForHumans() }}</small>
-                                    </div>
-                                </div>
-                            </div>
-                        @empty
-                            <div class="col-12 text-center py-5 wow fadeInUp" data-wow-delay="0.1s">
-                                No Review Found!
-                            </div>
-                        @endforelse
-
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="container py-5">
+        {{-- <div class="container py-5">
             <div class="row g-0">
                 <div class="col-md-12 d-flex align-items-center">
                     <div class="p-5 wow fadeInUp" data-wow-delay="0.2s">
@@ -226,7 +194,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
 
         <!-- Back to Top -->
         <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>

@@ -14,7 +14,7 @@
                   <tr>
                     <th>ID</th>
                     <th>User Name</th>
-                    <th>Culiner</th>
+                    <th>Resto</th>
                     <th>Comment</th>
                     <th>Rating</th>
                     <th>Status</th>
@@ -42,7 +42,7 @@
         columns:[
             {data:'id', name:'id'},
             {data:'user.name', name:'user.name'},
-            {data:'culiner.culiner_name', name:'culiner.culiner_name'},
+            {data:'resto.resto_name', name:'resto.resto_name'},
             // {data:'photo', name:'photo'},
             {data:'comment', name:'comment'},
             {data:'rating', name:'rating'},
@@ -52,9 +52,9 @@
                 name: 'is_aktif',
                 render: function (data) {
                     if (data) {
-                        return '<span style="color: green; font-weight:bold">Approve</span>';
+                        return '<span style="font-weight:bold" class="btn btn-success">Approve</span>';
                     } else {
-                        return '<span style="font-weight:bold">Approve</span>';
+                        return '<span style="font-weight:bold" class="btn btn-warning">Waiting</span>';
                     }
                 }
             },

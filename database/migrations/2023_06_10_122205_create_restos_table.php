@@ -20,6 +20,8 @@ class CreateRestosTable extends Migration
             $table->foreignId('users_id');
             $table->foreignId('culiner_id');
             $table->integer('price');
+            $table->string('resto_desc_id')->nullable();
+            $table->string('resto_desc_en')->nullable();
             $table->string('address');
             $table->string('address_link');
             $table->string('slug');

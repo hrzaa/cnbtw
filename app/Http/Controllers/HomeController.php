@@ -46,10 +46,10 @@ class HomeController extends Controller
             ->take(4)
             ->get();
 
-        $reviews = Review::with(['user', 'culiner'])
-            ->where('is_aktif', true)
-            ->orderBy('created_at', 'desc') // Sorting by 'created_at' column in descending order
-            ->get();
+        // $reviews = Review::with(['user', 'culiner'])
+        //     ->where('is_aktif', true)
+        //     ->orderBy('created_at', 'desc') // Sorting by 'created_at' column in descending order
+        //     ->get();
         
         return view('pages.home', [
             'culinersCount' => $culinersCount,
@@ -58,7 +58,7 @@ class HomeController extends Controller
             'restos' => $restos,
             'events' => $events,
             'culiners' => $culiners,  
-            'reviews' => $reviews,  
+            // 'reviews' => $reviews,  
         ]);
     }
 }

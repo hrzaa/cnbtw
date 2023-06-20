@@ -17,6 +17,7 @@ use App\Http\Controllers\Admin\DashboardController as DashboardAdminController;
 use App\Http\Controllers\Admin\EventGalleryController as EventGalleryAdminController;
 use App\Http\Controllers\Admin\RestoGalleryController as RestoGalleryAdminController;
 use App\Http\Controllers\Admin\CulinerGalleryController as CulinerGalleryAdminController;
+use App\Http\Controllers\RestoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,6 +40,8 @@ Route::get('/culinary', [CulinerController::class, 'index'])->name('culinary');
 Route::get('/culinary/categories/{id}', [CulinerController::class, 'detail'])->name('culinary-categories-detail');
 
 Route::get('culinary/detail/{id}', [DetailController::class, 'detail'])->name('culinary-detail');
+
+Route::get('culinary/resto/detail/{id}', [RestoController::class, 'detail'])->name('resto-detail');
 
 Route::get('/event', [EventController::class, 'index'])->name('event');
 Route::get('/event/{id}', [EventController::class, 'detail'])->name('event-detail');

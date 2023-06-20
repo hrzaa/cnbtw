@@ -1,6 +1,6 @@
 @extends('layouts.app')
  @section('title')
-    Detail Kuliner Page
+    Detail Event Page
  @endsection
 @section('content')
      <div class="container-fluid py-5 bg-dark hero-even" style="background: linear-gradient(0deg,

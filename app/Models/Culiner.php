@@ -43,9 +43,9 @@ class Culiner extends Model
         return $this->hasMany(CulinerGallery::class);
     }
 
-   public function reviews()
-    {
-        return $this->hasMany(Review::class);
-    }
+//    public function reviews()
+//     {
+//         return $this->hasMany(Review::class);
+//     }
     
 }
