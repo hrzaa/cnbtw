@@ -47,15 +47,31 @@
                   <input type="number" name="price" class="form-control" value="{{ $item->price }}">
                 </div>
                <div class="form-row">
-                    <div class="form-group col-md-6">
-                      <label>Alamat</label>
-                      <input type="text" name="address" class="form-control" value="{{ $item->address }}">
-                    </div>
-                    <div class="form-group col-md-6">
-                      <label>Alamat(Link Maps)</label>
-                      <input type="text" name="address_link" class="form-control" value="{{ $item->address_link }}">
-                    </div>
+                  <div class="form-group col-md-6">
+                    <label>Alamat</label>
+                    <input type="text" name="address" class="form-control" value="{{ $item->address }}">
                   </div>
+                  <div class="form-group col-md-6">
+                    <label>Alamat(Link Maps)</label>
+                    <input type="text" name="address_link" class="form-control" value="{{ $item->address_link }}">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label>Resto Desc EN</label>
+                    <textarea name="resto_desc_id">{!! $item->resto_desc_id !!}</textarea>
+                      <script>
+                              CKEDITOR.replace( 'resto_desc_id' );
+                      </script>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label>Resto History EN</label>
+                      <textarea name="resto_desc_en">{!! $item->resto_desc_en !!}</textarea>
+                      <script>
+                              CKEDITOR.replace( 'resto_desc_en' );
+                      </script>
+                  </div>
+                </div>   
                 <div class="card-footer text-right">
                   <button class="btn btn-primary mr-1" type="submit">Submit</button>
                   <button class="btn btn-secondary" type="reset">Reset</button>

@@ -4,7 +4,6 @@ namespace App\Models;
 
 use App\Models\User;
 use App\Models\Resto;
-use App\Models\Culiner;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -15,11 +14,6 @@ class Review extends Model
     protected $fillable = [
         'users_id', 'resto_id','comment', 'photo', 'rating', 'is_aktif'
     ];
-
-    // public function culiner()
-    // {
-    //     return $this->belongsTo(Culiner::class);
-    // }
     
     public function resto()
     {

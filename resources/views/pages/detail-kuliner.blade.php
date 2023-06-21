@@ -102,22 +102,23 @@
             </div>
         </div>
 
-        <div class="container py-5">
+         <div class="container py-5" id="resto">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                 <h5 class="section-title ff-secondary text-center text-primary fw-normal">Solo Culiners</h5>
-                <h1 class="mb-5">Most Popular Resto</h1>
+                <h1 class="mb-5">@lang('lang.most popular restaurants')</h1>
             </div>
             <div class="row g-4">
+                @php
+                    $incrementCategory = 0
+                @endphp
                 @forelse ($restos as $resto)
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                    <div class="team-item text-center rounded overflow-hidden p-2">
-                        <div class=" overflow-hidden m-4">
-                            <img class="img-fluid" src="{{ Storage::url($resto->resto_galleries->first()->photos ?? '') }}" alt="">
-                        </div>
-                        <h5 class="mb-0">{{ $resto->resto_name }}</h5>
-                        <a href="{{ $resto->address_link }}" class="mb-1">{{ $resto->address }}</a>
-                        <h6>Rp.{{ number_format($resto->price) }}</h6>
-                            <!-- Add icon library -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="{{ $incrementCategory+=100 }}">
+                    <div class="team-item bg-white text-center h-100 d-flex p-4 flex-column">`
+                        <img src="{{ Storage::url($resto->resto_galleries->first()->photos ?? '') }}" alt="">
+                        <h3 class="mt-2 text-center">{{ $resto->resto_name }}</h3>
+                        <div class="mt-auto p-2">
+                            <a href="{{ $resto->address_link }}" target="_blank" class="mb-1">{{ $resto->address }}</a>
+                        <h6>Rp{{ number_format($resto->price) }}</h6>
                             <small>
                                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
                                 <span class="fa fa-star checked"></span>
@@ -126,6 +127,7 @@
                                 <span class="fa fa-star"></span>
                                 <span class="fa fa-star"></span>
                             </small>
+                        </div>
                         <a href="{{ route('resto-detail', $resto->slug) }}" class="btn btn-primary">detail resto</a>
                     </div>
                 </div>
@@ -134,67 +136,8 @@
                         No Resto Found!
                     </div>
                 @endforelse
-
             </div>
         </div>
-
-        {{-- <div class="container py-5">
-            <div class="row g-0">
-                <div class="col-md-12 d-flex align-items-center">
-                    <div class="p-5 wow fadeInUp" data-wow-delay="0.2s">
-                        <h5 class="section-title ff-secondary text-start text-primary fw-normal">Ulasan</h5>
-                        <h1 class="text-dark mb-4">Give Your Review</h1>
-                        <form action="{{ route('review', $culiners->id) }}" method="POST" enctype="multipart/form-data">
-                        @csrf
-                        <div class="row g-3">
-                                @auth
-                                <div class="col-12">
-                                    <input type="hidden" name="culiner_id" value="{{ $culiners->id }}">
-                                    <input type="hidden" class="form-control" id="users_id" name="users_id" value="{{ Auth::user()->id }}" readonly>
-                                </div>
-                                @else
-                                    <div class="col-12">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control" id="name" name="name" placeholder="Your Name">
-                                        <label for="name">Name</label>
-                                    </div>
-                                </div>
-                                @endauth
-                                <div class="col-12 ">
-                                <div class="form-floating">
-                                    <div class="rate">
-                                        <input type="radio" id="star5" name="rating" value="5" checked/>
-                                        <label for="star5" title="star5">5 stars</label>
-                                        <input type="radio" id="star4" name="rating" value="4" />
-                                        <label for="star4" title="star4">4 stars</label>
-                                        <input type="radio" id="star3" name="rating" value="3" />
-                                        <label for="star3" title="star3">3 stars</label>
-                                        <input type="radio" id="star2" name="rating" value="2" />
-                                        <label for="star2" title="star2">2 stars</label>
-                                        <input type="radio" id="star1" name="rating" value="1" />
-                                        <label for="star1" title="star1">1 star</label>
-                                    </div>
-                                </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-floating">
-                                        <textarea class="form-control" placeholder="Your Review" id="review" name="comment" style="height: 100px"></textarea>
-                                        <label for="message">Your Review</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                @auth
-                                    <button class="btn btn-primary w-100 py-3" type="submit">Send Now</button>
-                                @else
-                                    <a href="{{ route('login') }}" class="btn btn-primary w-100 py-3">Sign To Review</a>
-                                @endauth
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div> --}}
 
         <!-- Back to Top -->
         <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>

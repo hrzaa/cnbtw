@@ -18,24 +18,23 @@
           <div class="card-body">
              <form action="{{ route('culiner-gallery.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
-                  <div class="form-group">
-                    <label>Culiner Name</label>
-                    <select name="culiner_id" class="form-control">
-                      @foreach ($culiners as $culiner)
-                          <option value="{{ $culiner->id }}">{{ $culiner->culiner_name }}</option>
-                      @endforeach
-                    </select>
-                  </div>
-                   <div class="form-group">
-                    <label>Thumnails Culiner</label>
-                    <input type="file" name="photos" class="form-control" required>
-                  </div>
-                 
-                  <div class="card-footer text-right">
-                    <button class="btn btn-primary mr-1" type="submit">Submit</button>
-                    <button class="btn btn-secondary" type="reset">Reset</button>
-                  </div>
-                </form>
+                <div class="form-group">
+                  <label>Culiner Name</label>
+                  <select name="culiner_id" class="form-control">
+                    @foreach ($culiners as $culiner)
+                        <option value="{{ $culiner->id }}">{{ $culiner->culiner_name }}</option>
+                    @endforeach
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Thumnails Culiner</label>
+                  <input type="file" name="photos" class="form-control" required>
+                </div>
+                <div class="card-footer text-right">
+                  <button class="btn btn-primary mr-1" type="submit">Submit</button>
+                  <button class="btn btn-secondary" type="reset">Reset</button>
+                </div>
+              </form>
           </div>
         </div>
       </div>

@@ -2,15 +2,17 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\Culiner;
 use App\Models\User;
+use App\Models\Culiner;
 use App\Models\Category;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Models\CulinerGallery;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
-use App\Http\Requests\Admin\CulinerRequest;
 use Yajra\DataTables\Facades\DataTables;
+use App\Http\Requests\Admin\CulinerRequest;
+use App\Http\Requests\Admin\CulinerGalleryRequest;
 
 class CulinerController extends Controller
 {
@@ -112,7 +114,7 @@ class CulinerController extends Controller
      */
     public function edit($id)
     {
-        $item = Culiner::findOrFail($id);
+        $item = Culiner::with('culiner_galleries')->findOrFail($id);
         $users = User::all();
         $categories = Category::all();
 
@@ -121,6 +123,21 @@ class CulinerController extends Controller
             'users' => $users,
             'categories' => $categories
         ]);
+    }
+
+    public function uploadGallery(CulinerGalleryRequest $request)
+    {
+        $data = $request->all();
+        $data['photos'] = $request->file('photos')->store('assets/culiner', 'public');
+        CulinerGallery::create($data);
+        return redirect()->route('culiner.edit', $request->culiner_id);
+    }
+
+    public function deleteGallery(Request $request, $id)
+    {
+        $item =  CulinerGallery::findOrFail($id);
+        $item->delete();
+        return redirect()->back();
     }
 
     /**
@@ -152,6 +169,7 @@ class CulinerController extends Controller
     public function destroy($id)
     {
         $item = Culiner::findOrFail($id);
+        $item->culiner_galleries()->delete();
         $item->delete();
 
         return redirect()->route('culiner.index');

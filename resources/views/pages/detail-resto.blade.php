@@ -26,7 +26,6 @@
 
     <!-- About Start -->
     <div class="container-fluid py-5 bg-white">
-        {{-- @dd($restos) --}}
         <div class="container">
             <div class="row g-5">
                 <div class="col-lg-6">
@@ -78,9 +77,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                   
+                    </div> 
                 </div>
             </div>
         </div>

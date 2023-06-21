@@ -71,6 +71,12 @@ Route::prefix('admin')
         Route::get('/review', [ReviewAdminController::class, 'index'])->name('review.index');
         Route::get('/review/approve/{id}', [ReviewAdminController::class, 'approve'])->name('review.approve');
         Route::delete('/review/destroy/{id}', [ReviewAdminController::class, 'destroy'])->name('review.destroy');
+
+        Route::post('culiner/gallery/upload', [CulinerAdminController::class, 'uploadGallery'])
+        ->name('culiner-gallery-upload');
+        Route::get('/culiner/gallery/delete/{id}', [CulinerAdminController::class, 'deleteGallery'])
+            ->name('culiner-gallery-delete');
+
 });
 
 

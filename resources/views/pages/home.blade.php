@@ -249,37 +249,6 @@
         </div>
         {{-- video end --}}
 
-        {{-- review start --}}
-        {{-- <div class="container py-5">
-            <div class="text-center">
-                <h5 class="section-title ff-secondary text-center text-primary fw-normal">@lang('lang.testimonial')</h5>
-                <h1 class="mb-5">@lang('lang.suggestions and critics')</h1>
-            </div>
-            <div class="row">
-                <div class="col-12 col-lg-8">
-                    <div class="review">
-                        @forelse ($reviews as $review)
-                            <div class="testimonial-item bg-transparent rounded p-3">
-                                <div class="d-flex align-items-center">
-                                    <img class="img-fluid flex-shrink-0 rounded-circle" src="/vendor/img/testimonial-1.jpg" style="width: 50px; height: 50px;">
-                                    <div class="ps-3">
-                                        <h5 class="mb-1">{{ $review->user->name }}</h5>
-                                        <p>{{ $review->comment }}</p>
-                                            <small>{{ $review->updated_at->diffForHumans() }}</small>
-                                    </div>
-                                </div>
-                            </div>
-                        @empty
-                            <div class="col-12 text-center py-5 wow fadeInUp" data-wow-delay="0.1s">
-                                No Review Found!
-                            </div>
-                        @endforelse
-                    </div>
-                </div>
-            </div>
-        </div> --}}
-        {{-- review end --}}
-
         <!-- Back to Top -->
         <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 
