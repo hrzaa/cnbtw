@@ -12,7 +12,6 @@ class CategoryController extends Controller
     {
         $categories = Category::take(6)
             ->get();
-
             return view('pages.home', [
                 'categories' => $categories
             ]);

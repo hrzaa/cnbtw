@@ -77,26 +77,18 @@ class RestoController extends Controller
        
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(RestoRequest $request)
     {
         $data = $request->all();
         $data['slug'] = Str::slug($request->resto_name);
-        
         $resto = Resto::create($data);
-
-        $culinerId = $request->input('culiner_id', []); // Ambil array id makanan dari form
-
-        // $resto->culiners()->attach($culinerId);
-        // $resto->culiners()->attach($culinerId);
 
         return redirect()->route('resto.index');
     }
+
+    // $resto = Resto::create($data);
+
+    // $culinerId = $request->input('culiner_id', []); // Ambil array id makanan dari form
 
     /**
      * Display the specified resource.
@@ -127,22 +119,12 @@ class RestoController extends Controller
             'culiners' => $culiners
         ]);
     }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
     public function update(RestoRequest $request, $id)
     {
         $data = $request->all();
-
         $item = Resto::findOrFail($id);
-
         $data['slug'] = Str::slug($request->resto_name);
-
         $item->update($data);
 
         return redirect()->route('resto.index');

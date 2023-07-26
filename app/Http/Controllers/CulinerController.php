@@ -11,7 +11,8 @@ class CulinerController extends Controller
     public function index()
     {
         $categories = Category::all();
-        $culiners = Culiner::with('culiner_galleries')->Paginate(6);
+        $culiners = Culiner::with('culiner_galleries')
+            ->Paginate(6);
 
         return view('pages.culinary',[
             'culiners' => $culiners,
@@ -23,7 +24,9 @@ class CulinerController extends Controller
     {
         $categories = Category::all();
         $category = Category::where('slug', $slug)->firstOrFail();
-        $culiners = Culiner::with('culiner_galleries')->where('categories_id', $category->id)->Paginate(32);
+        $culiners = Culiner::with('culiner_galleries')
+            ->where('categories_id', $category->id)
+            ->Paginate(32);
 
         return view('pages.culinary', [
             'categories' => $categories,
@@ -34,9 +37,9 @@ class CulinerController extends Controller
     public function search(Request $request){
         $keyword = $request->keyword;
         $categories = Category::all();
-
-        $culiners = Culiner::where('culiner_name','like',"%".$keyword."%")->paginate(2);
-        
+        $culiners = Culiner::where('culiner_name','like',"%".$keyword."%")
+            ->paginate(2);
+    
         return view('pages.culinary',compact('culiners', 'categories'));
     }
 

@@ -86,10 +86,7 @@ class CulinerController extends Controller
     public function store(CulinerRequest $request)
     {
         $data = $request->all();
-
         $data['slug'] = Str::slug($request->culiner_name);
-        // dd($data);
-
         Culiner::create($data);
 
         return redirect()->route('culiner.index');
@@ -150,11 +147,8 @@ class CulinerController extends Controller
     public function update(CulinerRequest $request, $id)
     {
         $data = $request->all();
-
         $item = Culiner::findOrFail($id);
-
         $data['slug'] = Str::slug($request->culiner_name);
-
         $item->update($data);
 
         return redirect()->route('culiner.index');

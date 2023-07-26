@@ -68,25 +68,15 @@ class EventController extends Controller
     public function create()
     {
         $users = User::all();
-        // $locations = EventLocation::all();
          return view('pages.admin.event.create',[
             'users' =>$users,
-            // 'locations' => $locations
          ]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(EventRequest $request)
     {
         $data = $request->all();
-
         $data['slug'] = Str::slug($request->event_name);
-
         Event::create($data);
 
         return redirect()->route('event.index');
@@ -114,28 +104,17 @@ class EventController extends Controller
         $item = Event::findOrFail($id);
         $users = User::all();
 
-        // dd($users);
         return view('pages.admin.event.edit', [
             'item' => $item,
             'users' => $users
         ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(EventRequest $request, $id)
     {
         $data = $request->all();
-
         $item = Event::findOrFail($id);
-
         $data['slug'] = Str::slug($request->event_name);
-
         $item->update($data);
 
         return redirect()->route('event.index');

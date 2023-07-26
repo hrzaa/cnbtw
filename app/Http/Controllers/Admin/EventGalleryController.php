@@ -65,24 +65,15 @@ class EventGalleryController extends Controller
     {
         $events = Event::all();
 
-         return view('pages.admin.event-gallery.create',[
+        return view('pages.admin.event-gallery.create',[
             'events' =>$events
-         ]);
-        // dd($events);
+        ]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(EventGalleryRequest $request)
     {
         $data = $request->all();
-
         $data['photos'] = $request->file('photos')->store('assets/event', 'public');
-
         EventGallery::create($data);
 
         return redirect()->route('event-gallery.index');

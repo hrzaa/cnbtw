@@ -65,8 +65,6 @@ class ReviewController extends Controller
         
     }
 
-
-
     public function destroy($id)
     {
         $item = Review::findOrFail($id);

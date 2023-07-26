@@ -1,6 +1,6 @@
 @extends('layouts.dashboard')
 @section('title')
-     Edit Culiner Page
+     Edit Resto Page
 @endsection
 @section('content')
     <div class="row">
@@ -58,14 +58,14 @@
                 </div>
                 <div class="form-row">
                   <div class="form-group col-md-6">
-                    <label>Resto Desc EN</label>
+                    <label>Resto Desc ID</label>
                     <textarea name="resto_desc_id">{!! $item->resto_desc_id !!}</textarea>
                       <script>
                               CKEDITOR.replace( 'resto_desc_id' );
                       </script>
                   </div>
                   <div class="form-group col-md-6">
-                    <label>Resto History EN</label>
+                    <label>Resto Desc EN</label>
                       <textarea name="resto_desc_en">{!! $item->resto_desc_en !!}</textarea>
                       <script>
                               CKEDITOR.replace( 'resto_desc_en' );

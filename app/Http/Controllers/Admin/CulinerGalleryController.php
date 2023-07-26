@@ -67,7 +67,6 @@ class CulinerGalleryController extends Controller
          return view('pages.admin.culiner-gallery.create',[
             'culiners' =>$culiners
          ]);
-        // dd($culiners);
     }
 
     /**
@@ -79,9 +78,7 @@ class CulinerGalleryController extends Controller
     public function store(CulinerGalleryRequest $request)
     {
         $data = $request->all();
-
         $data['photos'] = $request->file('photos')->store('assets/culiner', 'public');
-
         CulinerGallery::create($data);
 
         return redirect()->route('culiner-gallery.index');
@@ -145,11 +142,7 @@ class CulinerGalleryController extends Controller
     {
         $item = CulinerGallery::findOrFail($id);
         $filePath = $item->photos;
-    
-        // Hapus file dari storage
         Storage::disk('public')->delete($filePath);
-        
-        // Hapus record dari database
         $item->delete();
 
         return redirect()->route('culiner-gallery.index');

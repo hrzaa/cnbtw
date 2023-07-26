@@ -55,7 +55,6 @@ Route::group(['middleware' => ['auth']], function(){
 
 
 Route::prefix('admin')
-    // ->namespace('Admin')
     ->middleware(['auth', 'admin'])
     ->group(function(){
         Route::get('/', [DashboardAdminController::class, 'index'])->name('admin-dashboard');
@@ -67,7 +66,6 @@ Route::prefix('admin')
         Route::resource('event-gallery', EventGalleryAdminController::class);
         Route::resource('category', CategoryAdminController::class);
         Route::resource('user', UserAdminController::class);
-        // Route::resource('review', ReviewAdminController::class);
         Route::get('/review', [ReviewAdminController::class, 'index'])->name('review.index');
         Route::get('/review/approve/{id}', [ReviewAdminController::class, 'approve'])->name('review.approve');
         Route::delete('/review/destroy/{id}', [ReviewAdminController::class, 'destroy'])->name('review.destroy');
@@ -76,7 +74,6 @@ Route::prefix('admin')
         ->name('culiner-gallery-upload');
         Route::get('/culiner/gallery/delete/{id}', [CulinerAdminController::class, 'deleteGallery'])
             ->name('culiner-gallery-delete');
-
 });
 
 

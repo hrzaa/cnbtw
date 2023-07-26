@@ -68,18 +68,10 @@ class UserController extends Controller
          return view('pages.admin.user.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(UserRequest $request)
     {
         $data = $request->all();
-
         $data['password'] = bcrypt($request->password);
-
         User::create($data);
 
         return redirect()->route('user.index');
@@ -110,25 +102,15 @@ class UserController extends Controller
         ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(UserRequest $request, $id)
     {
         $data = $request->all();
-
         $item = User::findOrFail($id);
-
         if($request->password){
             $data['password'] = bcrypt($request->password);
         }else{
             unset($data['password']);
         }
-
         $item->update($data);
 
         return redirect()->route('user.index');

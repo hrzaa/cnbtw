@@ -68,21 +68,12 @@ class RestoGalleryController extends Controller
          return view('pages.admin.resto-gallery.create',[
             'restos' =>$restos
          ]);
-        // dd($restos);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(RestoGalleryRequest $request)
     {
         $data = $request->all();
-
         $data['photos'] = $request->file('photos')->store('assets/resto', 'public');
-
         RestoGallery::create($data);
 
         return redirect()->route('resto-gallery.index');

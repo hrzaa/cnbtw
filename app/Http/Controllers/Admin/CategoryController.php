@@ -67,40 +67,16 @@ class CategoryController extends Controller
          return view('pages.admin.category.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(CategoryRequest $request)
     {
         $data = $request->all();
         $data['slug'] = Str::slug($request->name_id);
         $data['photo'] = $request->file('photo')->store('assets/category', 'public');
-
         Category::create($data);
-
+        
         return redirect()->route('category.index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         $item = Category::findOrFail($id);
@@ -108,14 +84,7 @@ class CategoryController extends Controller
             'item' => $item
         ]);
     }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
     public function update(CategoryRequest $request, $id)
     {
         $data = $request->all();

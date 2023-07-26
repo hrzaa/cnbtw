@@ -15,7 +15,7 @@ class DetailController extends Controller
             ->where('slug', $id)
             ->firstOrFail();
         $restos = Resto::with(['resto_galleries', 'culiner'])
-            ->where('culiner_id', $culiners->id) // Menambahkan kondisi where untuk memfilter berdasarkan ID makanan
+            ->where('culiner_id', $culiners->id) 
             ->take(4)
             ->get();
         
